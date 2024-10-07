@@ -36,26 +36,30 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			
-      <body className='bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-200 selection:text-teal-900'>
-        <div
-          id="pointer-events"
-          className="absolute inset-0 z-30 transition duration-300" // Adjust z-index if needed
-          style={{
-            background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.25), transparent 80%)`,
-          }}
-          ref={pointerEventsRef}
-        />
-        
-        <div className='mx-auto min-h-screen max-w-screen-2xl px-2 py-12 font-sans md:px-4 md:py-20 lg:px-6 lg:py-0'>
-				
+			<body className="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-200 selection:text-teal-900">
+			<div className="relative min-h-screen">
+      {/* Pointer effects background */}
+      <div
+        id="pointer-events"
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.25), transparent 80%)`,
+        }}
+        ref={pointerEventsRef}
+      />
+
+      {/* Content */}
+      <div className="relative flex ">
+       
+        <div className="mx-auto min-h-screen max-w-screen-2xl px-2 py-12 font-sans md:px-4 md:py-20 lg:px-6 lg:py-0">
           <div className="lg:flex lg:justify-between lg:gap-4">
-					
-            <Navbar />
-						
+					<Navbar />
             {children}
           </div>
         </div>
-      </body>
+      </div>
+    </div>
+    </body>
     </html>
 	);
 }
