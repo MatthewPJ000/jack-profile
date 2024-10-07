@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+	color: white;
+}
+.heading {
+	position: relative;
+	font-family: Trajan, sans-serif;
+	font-size: 1.4rem;
+	line-height: 2.5rem;
+	color: #d0fffe;
+	display: inline-block;
+	left: 50%;
+	transform: translateX(-50%);
+	text-transform: uppercase;
+	padding: 20px;
+	margin-bottom: 0;
+	text-shadow: 0 0 5px #0088e8;
+	background-image: url(/images/heading-bg.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	letter-spacing: 0;
+}
+.heading::before {
+	content: "";
+	position: absolute;
+	background-image: url(/images/heading-left.png);
+	width: 70px;
+	height: 8px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	left: -70px;
+	top: 2rem;
+}
+.heading::after {
+	content: "";
+	position: absolute;
+	background-image: url(/images/heading-right.png);
+	width: 70px;
+	height: 8px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	right: -70px;
+	top: 2rem;
+}
+/* .bg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	-webkit-animation-name: twinkle;
+	animation-name: twinkle;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	background-size: 100% auto;
+	background-repeat: repeat;
+}
+.bg:nth-of-type(1) {
+	background-image: url(../images/post-bg-1.png);
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.bg:nth-of-type(2) {
+	background-image: url(../images/post-bg-2.png);
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.bg:nth-of-type(3) {
+	background-image: url(../images/post-bg-3.png);
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+} */
